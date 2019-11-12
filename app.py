@@ -7,9 +7,9 @@ from sqlalchemy import create_engine, func
 import datetime as dt
 from flask import Flask, jsonify
 
-#################################################
+
 # Database Setup
-#################################################
+
 # engine = create_engine("sqlite:///Resources/hawaii.sqlite")
 engine = create_engine('sqlite:///Resources/hawaii.sqlite', connect_args={'check_same_thread': False}, echo=True)
 
@@ -25,14 +25,14 @@ Measurement = Base.classes.measurement
 # Create session from Python to the DB
 session = Session(engine)
 
-#################################################
+
 # Flask Setup
-#################################################
+
 app = Flask(__name__)
 
-#################################################
+
 # Flask Routes
-#################################################
+
 
 @app.route("/")
 def welcome():
